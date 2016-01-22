@@ -1,85 +1,125 @@
 <div class="jumbotron text-center">
-	<h3>Configure camera (ID: {{ configData.general.cameraID }})</h3>
+	<h3>Configure camera (ID: {{ currentID }})</h3>
 	<hr>
-	<h4>General</h4>
 	<form class="form-horizontal" ng-submit="doConfig()">
-
-		<div class="column">
-			<p>
-				<div class="form-group">
-					<label for="inputCameraID" class="col-sm-4 control-label">Camera ID</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputCameraID" placeholder="camera ID"
-							   value="configData.general.cameraID" ng-model="configData.general.cameraID" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="inputResolutionWidth" class="col-sm-4 control-label">Width</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputResolutionWidth" placeholder="width"
-							   value="configData.general.resolution.width" ng-model="configData.general.resolution.width" required>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputResolutionHeight" class="col-sm-4 control-label">Height</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputResolutionHeight" placeholder="height"
-							   value="configData.general.resolution.height" ng-model="configData.general.resolution.height" required>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputQuality" class="col-sm-4 control-label">Quality</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputQuality"
-							   placeholder="quality" ng-model="configData.general.quality" required>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputWorkers" class="col-sm-4 control-label">Workers</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputWorkers"
-							   placeholder="workers" ng-model="configData.general.workers" required>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputSensorDelay" class="col-sm-4 control-label">Sensor Delay</label>
-					<div class="col-sm-4">
-						<input type="text" class="form-control" id="inputSensorDelay"
-							   placeholder="sensor delay" ng-model="configData.general.delay"
-							   ng-disabled="!configData.general.sensor" required>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputVideoPort" class="col-sm-4 control-label">Video Port</label>
-					<div class="col-sm-4">
-						<input type="checkbox" ng-model="configData.general.videoPort" id="inputVideoPort">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputSensor" class="col-sm-4 control-label">Sensor</label>
-					<div class="col-sm-4">
-						<input type="checkbox" ng-model="configData.general.sensor" id="inputSensor">
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="inputDoRequest" class="col-sm-4 control-label">Request</label>
-					<div class="col-sm-4">
-						<input type="checkbox" ng-model="configData.general.doRequest" id="inputDoRequest">
-					</div>
-				</div>
-			</p>
-			<p>
-				HI
-			</p>
+		<h4>General</h4>
+		<div class="form-group">
+			<label for="inputCameraID" class="col-sm-4 control-label">Camera ID</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="inputCameraID" placeholder="camera ID"
+					   value="configData.general.cameraID" ng-model="configData.general.cameraID" required>
+			</div>
 		</div>
+		<div class="form-group">
+			<label for="inputResolutionWidth" class="col-sm-4 control-label">Width</label>
+			<div class="col-sm-4">
+				<input type="number" class="form-control" id="inputResolutionWidth" placeholder="width"
+					   value="configData.general.resolution.width" ng-model="configData.general.resolution.width" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputResolutionHeight" class="col-sm-4 control-label">Height</label>
+			<div class="col-sm-4">
+				<input type="number" class="form-control" id="inputResolutionHeight" placeholder="height"
+					   value="configData.general.resolution.height" ng-model="configData.general.resolution.height" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputQuality" class="col-sm-4 control-label">Quality</label>
+			<div class="col-sm-4">
+				<input type="number" class="form-control" id="inputQuality"
+					   placeholder="quality" ng-model="configData.general.quality" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputWorkers" class="col-sm-4 control-label">Workers</label>
+			<div class="col-sm-4">
+				<input type="number" class="form-control" id="inputWorkers"
+					   placeholder="workers" ng-model="configData.general.workers" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputSensorDelay" class="col-sm-4 control-label">Sensor Delay</label>
+			<div class="col-sm-4">
+				<input type="number" class="form-control" id="inputSensorDelay"
+					   placeholder="sensor delay" ng-model="configData.general.delay"
+					   ng-disabled="!configData.general.sensor" required>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputVideoPort" class="col-sm-4 control-label">Video Port</label>
+			<div class="col-sm-4">
+				<input type="checkbox" ng-model="configData.general.videoPort" id="inputVideoPort">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputSensor" class="col-sm-4 control-label">Sensor</label>
+			<div class="col-sm-4">
+				<input type="checkbox" ng-model="configData.general.sensor" id="inputSensor">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="inputDoRequest" class="col-sm-4 control-label">Request</label>
+			<div class="col-sm-4">
+				<input type="checkbox" ng-model="configData.framer.doRequest" id="inputDoRequest">
+			</div>
+		</div>
+
+		<h4>Framer</h4>
+		<div class="form-group">
+			<label for="inputFramerate" class="col-sm-4 control-label">Framerate</label>
+			<div class="col-sm-4">
+				<input type="number"  class="form-control" ng-model="configData.framer.framerate"
+					   id="inputFramerate" placeholder="framerate" required>
+			</div>
+		</div>
+
+		<h4>Moving Detector</h4>
+		<h5>ROI for drive</h5>
+		<div class="container">
+			<ul class="list-inline">
+				<li class="label label-success" ng-click="removeRoi(argsRoiDrive, roi)"
+					ng-repeat="roi in argsRoiDrive"> {{ roi }} </li>
+			</ul>
+			<input type="number" ng-model="RoiDriveValue" id="inputRoiDriveValue">
+			<button type="button" ng-click="addRoi(argsRoiDrive, RoiDriveValue)">+</button>
+		</div>
+		<h5>ROI for leave</h5>
+		<div class="container">
+			<ul class="list-inline">
+				<li class="label label-success" ng-click="removeRoi(argsRoiLeave, roi)"
+					ng-repeat="roi in argsRoiLeave"> {{ roi }} </li>
+			</ul>
+			<input type="number" ng-model="RoiLeaveValue" id="inputRoiLeaveValue">
+			<button type="button" ng-click="addRoi(argsRoiLeave, RoiLeaveValue)">+</button>
+		</div>
+
+		<h4>Plater</h4>
+		<div class="form-group">
+			<label for="inputAngle" class="col-sm-4 control-label">Angle</label>
+			<div class="col-sm-4">
+				<input type="number"  class="form-control" ng-model="configData.plater.angle"
+					   id="inputAngle" required>
+			</div>
+		</div>
+
+		<h4>Requester</h4>
+		<div class="form-group">
+			<label for="inputServerUrl" class="col-sm-4 control-label">Server URL</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" id="inputServerUrl" placeholder="Server URL"
+					   value="configData.requester.url" ng-model="configData.requester.url" required>
+			</div>
+		</div>
+
 		<button type="submit" class="btn btn-primary">Configure</button>
 	</form>
-
+	{{ errors }}
 </div>

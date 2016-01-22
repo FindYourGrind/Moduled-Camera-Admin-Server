@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div id="firstForm">
+        <div class="row col">
+            <div class="col-lg-3">
+                <input type="text" class="form-control" placeholder="Variable name" ng-model="form.arg_name" required>
+            </div>
+            <button ng-click="addDellForm($index)" id="btn" type="button" class="btn btn-default pull-right btnInterp">
+                <span ng-class="{'glyphicon-minus': !($first), 'glyphicon-plus': $first}" class="glyphicon glyphicon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</div>

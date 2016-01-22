@@ -14,3 +14,12 @@ body { padding-top:30px; }
     -moz-column-rule: 1px solid #ccc;
     column-rule: 1px solid #ccc;
 }
+
+.col-lg-3 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding:0px;
+    height:60px;
+}
