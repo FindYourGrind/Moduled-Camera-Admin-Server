@@ -56,6 +56,18 @@ io.on('connection', function(socket) {
             console.log('Config OK');
         });
     });
+
+    socket.on('send_image', function (data) {
+        console.log('newim');
+        io.sockets.emit('new_image', data);
+    });
+
+    socket.on('get_new_image', function (data) {
+        console.log('getnewim');
+        io.sockets.emit('get_image');
+    });
+
+
 });
 
 exports.io = io;

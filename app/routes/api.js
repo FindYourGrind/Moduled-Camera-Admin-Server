@@ -18,5 +18,14 @@ router.put('/config', function(req, res) {
     io.io.sockets.emit('set_config', JSON.stringify(req.body, "", 4));
 });
 
+router.get('/image', function(req, res) {
+    io.io.sockets.emit('get_image');
+    io.io.on('connection', function(socket) {
+        socket.on('send_image', function (data) {
+            console.log(data);
+            res.end(data);
+        });
+    });
+});
 
 module.exports = router;

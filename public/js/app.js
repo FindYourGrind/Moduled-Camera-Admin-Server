@@ -1,6 +1,7 @@
 angular.module('sampleApp',
-                ['ngRoute', 'appRoutes',
+                ['ngRoute',    'appRoutes',
                  'HomeCtrl',   'HomeService',
                  'VideoCtrl',  'VideoService',
                  'ConfigCtrl', 'ConfigService',
-                 'LogsCtrl',   'LogsService']);
+                 'LogsCtrl',   'LogsService',
+                 'SocketService']);
