@@ -22,10 +22,19 @@ router.get('/image', function(req, res) {
     io.io.sockets.emit('get_image');
     io.io.on('connection', function(socket) {
         socket.on('send_image', function (data) {
-            console.log(data);
             res.end(data);
         });
     });
+});
+
+router.get('/log', function(req, res) {
+    io.io.sockets.emit('get_log');
+    io.io.on('connection', function(socket) {
+        socket.on('send_log', function (data) {
+            console.log(data);
+        });
+    });
+    res.send('hi');
 });
 
 module.exports = router;

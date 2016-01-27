@@ -21,8 +21,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/logs', {
 			templateUrl: 'views/logs.html',
 			controller: 'LogsController'
+		})
+
+		.otherwise({
+			redirectTo: '/home'
 		});
 
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 
 }]);

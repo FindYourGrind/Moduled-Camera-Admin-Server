@@ -1,4 +1,6 @@
-angular.module('ConfigCtrl', []).controller('ConfigController', function($scope, Receive, Update) {
+angular.module('ConfigCtrl', []).controller('ConfigController', function($scope, Receive, Update, socket) {
+
+    //socket.disconnect();
 
     $scope.errors = null;
 

@@ -23,3 +23,67 @@ body { padding-top:30px; }
     padding:0px;
     height:60px;
 }
+
+.glyphicon {
+    padding: 20px;
+    font-size: 50px;
+}
+
+.bs-glyphicons {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.bs-glyphicons {
+    margin: 0px -10px 20px;
+    overflow: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+.bs-glyphicons-list {
+    padding-left: 0px;
+    list-style: outside none none;
+}
+ol, ul {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.bs-glyphicons li {
+    width: 12.5%;
+    font-size: 12px;
+}
+.bs-glyphicons li {
+    float: left;
+    width: 20%;
+    height: 115px;
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.bs-glyphicons .glyphicon {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size:50px;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    border-radius: 5px; /* Уголки */
+}
+
+.glyphicon:hover {
+    content: attr(data-title); /* Выводим текст */
+    background: black;
+    color: #fff; /* Цвет текста */
+}
+
+.glyph-color:hover{
+    color: white;
+}

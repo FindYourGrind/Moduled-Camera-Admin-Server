@@ -1,3 +1,21 @@
 <div class="jumbotron text-center">
-    <h1>Logs</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">LOGS</div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr class="info">
+                    <th ng-repeat="key in head">{{ key }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="log in logs">
+                   <td ng-repeat="key in log"> {{ key }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </div>

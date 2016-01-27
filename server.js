@@ -42,7 +42,11 @@ var io = require('socket.io').listen(server);
 
 server.listen(8081);
 
+var users = [];
+
 io.on('connection', function(socket) {
+
+    users.push(socket.client.id);
 
     socket.emit('get_config');
 
@@ -58,16 +62,36 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send_image', function (data) {
-        console.log('newim');
-        io.sockets.emit('new_image', data);
+        if (users.length > 1) {
+            io.sockets.emit('new_image', data);
+        }
     });
 
     socket.on('get_new_image', function (data) {
-        console.log('getnewim');
-        io.sockets.emit('get_image');
+        if (users.length > 1) {
+            io.sockets.emit('get_image');
+        }
     });
 
+    socket.on('disconnect', function (data) {
+        users.splice(users.indexOf(socket.client.id, 1));
+    });
 
+    socket.on('log', function(socket) {
+        io.sockets.emit('get_log');
+    });
+
+    socket.on('send_log', function (data) {
+        io.sockets.emit('new_log', data);
+    });
+
+    socket.on('update', function(socket) {
+        io.sockets.emit('update_camera');
+    });
+
+    socket.on('restart', function (data) {
+        io.sockets.emit('restart_camera', data);
+    });
 });
 
 exports.io = io;

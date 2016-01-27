@@ -1,3 +1,23 @@
 <div class="jumbotron text-center">
-	<h1>Home</h1>
+	<h2>T4P - Camera for plate number recognition</h2>
+	<hr>
+	<div class="bs-glyphicons">
+		<ul class="bs-glyphicons-list">
+			<li>
+				<span class="glyphicon glyphicon-facetime-video glyph-color" aria-hidden="true" ng-click="$location.url('/video')"></span>
+			</li>
+			<li>
+				<span class="glyphicon glyphicon-cog glyph-color" aria-hidden="true" ng-click="$location.url('/config')"></span>
+			</li>
+			<li>
+				<span class="glyphicon glyphicon-pencil glyph-color" aria-hidden="true" ng-click="$location.url('/logs')"></span>
+			</li>
+			<li>
+				<span class="glyphicon glyphicon-download-alt glyph-color" aria-hidden="true" ng-click="doUpdate()"></span>
+			</li>
+			<li>
+				<span class="glyphicon glyphicon-refresh glyph-color" aria-hidden="true" ng-click="doRestart()"></span>
+			</li>
+		</ul>
+	</div>
 </div>

@@ -82,24 +82,34 @@
 		</div>
 
 		<h4>Moving Detector</h4>
-		<h5>ROI for drive</h5>
-		<div class="container">
-			<ul class="list-inline">
-				<li class="label label-success" ng-click="removeRoi(argsRoiDrive, roi)"
-					ng-repeat="roi in argsRoiDrive"> {{ roi }} </li>
-			</ul>
-			<input type="number" ng-model="RoiDriveValue" id="inputRoiDriveValue">
-			<button type="button" ng-click="addRoi(argsRoiDrive, RoiDriveValue)">+</button>
+		<br>
+		<div style="width: 100%; float: left;">
+			<div style="float: left; width: 50%;" ng-controller="VideoController">
+				<canvas id="myCanvas" width="320" height="240" ng-init="startStream(true)"></canvas>
+			</div>
+			<div style="float: left; width: 25%;  height: 240px;">
+				<h5>ROI for drive</h5>
+				<div class="container">
+					<ul class="list-inline">
+						<li class="label label-info" ng-click="removeRoi(argsRoiDrive, roi)"
+							ng-repeat="roi in argsRoiDrive"> {{ roi }} </li>
+					</ul>
+					<input type="number" ng-model="RoiDriveValue" id="inputRoiDriveValue">
+					<button type="button" ng-click="addRoi(argsRoiDrive, RoiDriveValue)">+</button>
+				</div>
+				<h5>ROI for leave</h5>
+				<div class="container">
+					<ul class="list-inline">
+						<li class="label label-warning" ng-click="removeRoi(argsRoiLeave, roi)"
+							ng-repeat="roi in argsRoiLeave"> {{ roi }} </li>
+					</ul>
+					<input type="number" ng-model="RoiLeaveValue" id="inputRoiLeaveValue">
+					<button type="button" ng-click="addRoi(argsRoiLeave, RoiLeaveValue)">+</button>
+				</div>
+			</div>
 		</div>
-		<h5>ROI for leave</h5>
-		<div class="container">
-			<ul class="list-inline">
-				<li class="label label-success" ng-click="removeRoi(argsRoiLeave, roi)"
-					ng-repeat="roi in argsRoiLeave"> {{ roi }} </li>
-			</ul>
-			<input type="number" ng-model="RoiLeaveValue" id="inputRoiLeaveValue">
-			<button type="button" ng-click="addRoi(argsRoiLeave, RoiLeaveValue)">+</button>
-		</div>
+		<div style="clear: both;"></div>
+		<br>
 
 		<h4>Plater</h4>
 		<div class="form-group">
