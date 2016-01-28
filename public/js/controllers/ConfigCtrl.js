@@ -71,6 +71,7 @@ angular.module('ConfigCtrl', []).controller('ConfigController', function($scope,
         arr.splice(index, 1);
     };
 
+    socket.stop();
     getConfig();
 
 });

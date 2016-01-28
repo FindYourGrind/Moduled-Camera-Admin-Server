@@ -12,4 +12,5 @@ angular.module('HomeCtrl', []).controller('HomeController', function($scope, $lo
         socket.emit('restart')
     };
 
+    socket.stop();
 });

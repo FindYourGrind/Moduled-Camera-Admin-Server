@@ -14,4 +14,6 @@ angular.module('LogsCtrl', [])
                 $scope.logs.push(JSON.parse(logArray[note]));
             }
         })
+
+        socket.stop();
     });

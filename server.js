@@ -32,17 +32,15 @@ app.use('/sensor', sensorHandle);
 app.use('/api', apiHandle);
 
 // start app ===============================================
-app.listen(port);
+//app.listen(port);
+var io = require('socket.io')(app.listen(port));
 console.log('Server started on port ' + port); 			// shoutout to the user
 
 module.exports = app; 						// expose app
 
-var server = require('http').Server(app);
-var io = require('socket.io').listen(server);
-
-server.listen(8081);
-
 var users = [];
+var image;
+var timePrv = 0;
 
 io.on('connection', function(socket) {
 
@@ -61,16 +59,23 @@ io.on('connection', function(socket) {
         });
     });
 
+    // Response from camera
     socket.on('send_image', function (data) {
-        if (users.length > 1) {
-            io.sockets.emit('new_image', data);
+        var time = new Date().getTime();
+        image = data;
+        if ((time - timePrv) < 3000) {
+            socket.emit('get_image');
         }
     });
 
+    // Request from angular
     socket.on('get_new_image', function (data) {
-        if (users.length > 1) {
+        var time = new Date().getTime();
+        if ((time - timePrv) > 3000) {
             io.sockets.emit('get_image');
         }
+        timePrv = time;
+        socket.emit('new_image', image)
     });
 
     socket.on('disconnect', function (data) {
